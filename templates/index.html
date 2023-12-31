@@ -1,0 +1,90 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+
+{% block contenido %}
+ <!-- Imprime: Initial Value -->
+
+<section class="menu-section">
+    <div class="line-menu">
+        <div class="line"></div>
+        <h1>Eventos</h1>
+        <div class="line"></div>
+    </div>
+
+    <div class="row">
+        <div id="carouselExampleFade" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner ">
+                {% for offer in offers %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <img src="{{offer.imagen.url}}" class="d-block w-100" alt="{{offer.imagen.url}}">
+                    </div>
+                {% endfor %}
+              
+            </div>
+            <button class="carousel-control-prev" type="button" data-target="#carouselExampleFade" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleFade" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden"></span>
+            </button>
+          </div>
+    </div>
+
+    <div class="line-menu">
+        <div class="line"></div>
+        <h1>Menú</h1>
+        <div class="line"></div>
+        
+        
+    </div>
+    {% if categories %}
+        <div class="slider-category-container">
+            <ul class="slider-category">
+                {% for category in categories %}
+                    <li>
+                        <a href="#{{category.category_name}}">{{category.category_name}}</a> 
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+    {% endif %}
+    
+        
+    
+
+
+    <div class="menu-category-container">
+      <ul class="category-list">
+          {% if cart %}
+              {% for item in cart %}
+                  <li class="category-container">
+                    <div id="{{category.category_name}}" class="line-category-menu">
+                        <h1>{{item.category}}</h1>
+                    </div>
+                    <ul class="product-list">
+                        
+                        {% for product in item.products %}
+                        
+                            <li class="{% cycle 'product' 'product invers'%}">
+                                <img src="{{ product.imagen.url }}" alt="">
+                                <div class="product-details">
+                                   <span>{{product.product_name}}</span>
+                                   <p>{{product.ingredients}}</p>
+                                   <span>${{product.product_value}}cup</span>
+                                </div>
+                            </li>
+                            <br>
+                        {% endfor %}
+                    </ul>
+                  </li>
+              {% endfor %}
+          {% endif %}
+      </ul>
+    </div>
+</section>
+
+{% endblock %}

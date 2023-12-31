@@ -1,0 +1,5 @@
+.vscode
+images
+.env
+db.sqlite3
+.venv

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Metça SRL{% endblock %} </title>
+
+    <!-- FAVICON -->
+    {% load static %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href=" {% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href=" {% static 'css/responsive-style.css' %}"> -->
+    <!-- Bootstrap 5 CDN Links -->
+   
+
+    <!-- Link Swiper's CSS -->   
+</head>
+{% block body %}
+<body>
+    <!-- Navbar section -->
+    <section  class="presentation">
+        
+        <h1 >
+            <span>M</span>
+            <span>e</span>
+            <span>t</span>
+            <span>ç</span>
+            <span>a</span>
+        </h1>
+        <div class="srl">
+            <h1>
+                SRL
+            </h1>
+      
+    </div>
+        
+    </section>
+    {% block contenido%}
+    
+    {% endblock %}
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+{% endblock %}
+
+
+
+</html>
+
