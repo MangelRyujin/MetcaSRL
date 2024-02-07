@@ -257,7 +257,7 @@ h1 span:nth-child(5){
     width: 100%;
     height: fit-content;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -271,7 +271,11 @@ h1 span:nth-child(5){
 }
 
 .product .product-details{
-    width: 70%;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
     
 }
 
