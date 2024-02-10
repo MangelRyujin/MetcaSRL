@@ -2,7 +2,7 @@ from .base import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     "default": {
@@ -11,4 +11,9 @@ DATABASES = {
     }
 }
 
-STATIC_URL = "static/"
+STATIC_URL = 'static/'
+MEDIA_URL = '/images/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
+STATICFILES_DIRS = [
+     "static",
+]

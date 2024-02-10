@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Bad+Script');
+/* @import url('https://fonts.googleapis.com/css?family=Bad+Script'); */
+
+@font-face {
+    font-family: 'Bad Script';
+    src: url('/static/fonts/badscript.woff2') format('woff2'),
+         url('/static/fonts/badscript.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
 
 *{
     margin: 0;
@@ -17,7 +25,7 @@ body{
     background: #000;
     background-blend-mode: hard-light;
     background-image: linear-gradient(rgba(6, 6, 6, 0.9), rgba(0, 0, 0, 0.9)),
-      url(https://images.pexels.com/photos/1227515/pexels-photo-1227515.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+      url('../images/muro.jpeg');
     background-blend-mode: hard-light;
 }
 
@@ -47,6 +55,7 @@ h1{
 .presentation h1{
     font-family: Arial, Helvetica, sans-serif;
     margin: 1rem;
+    font-weight: bold;
     
 }
 
@@ -54,6 +63,7 @@ h1{
     background: #f39810;
     height: 120px;
     margin-top: 1rem;
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;

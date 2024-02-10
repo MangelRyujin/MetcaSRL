@@ -8,7 +8,10 @@ from apps.offers.models import Offer
 
 def products_card(request):
     categories=Category.objects.all()
-    offers = Offer.objects.all()
+    offers = Offer.objects.filter(
+    fecha_inicial_vigente__lte=date.today(),
+    fecha_final_vigente__gte=date.today()
+)
     cart = []
     for category in categories:
        cart.append({
